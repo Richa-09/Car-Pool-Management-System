@@ -1,0 +1,15 @@
+#main_nav{
+    background-color: #53d644;
+}
+body{
+    background-color: white;
+}
+.navbar-brand{
+    font-family: 'Sonsie One', cursive;
+    font-size: 30px;
+}
+.nav-link {
+    font-family: 'Heebo', sans-serif;
+    font-size: 25px;
+    color: white;
+}
