@@ -1,0 +1,11 @@
+.heading{
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+
+.first{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    float: left;
+}

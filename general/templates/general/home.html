@@ -1,6 +1,21 @@
 {% extends 'general/layout.html'%}
+{% load static %}
+{%block head%}
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+    .heading{
+      background-image: url({% static 'images/car1.jpg'%});
+    }
+  </style>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{%endblock%}
 {%block title%}ePool | Home{%endblock%}
 
 {%block content%}
+<div class="heading jumbotron text-light img-fluid">
+   <div class="container ml-5">
+     <p class="first">Don't let that seat go empty</p>
+   </div>
+</div>
 
 {%endblock%}
