@@ -10,3 +10,9 @@ def login(request):
 
 def signup(request):
     return render(request,'general/signup.html')
+
+def offer(request):
+    return render(request,'general/offer.html')
+
+def ride(request):
+    return render(request,'general/ride.html')
