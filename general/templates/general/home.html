@@ -2,6 +2,7 @@
 {% load static %}
 {%block head%}
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
 <style>
     .heading{
       background-image: url({% static 'images/car1.jpg'%});
@@ -12,7 +13,7 @@
 {%block title%}ePool | Home{%endblock%}
 
 {%block content%}
-<div class="heading jumbotron text-light img-fluid">
+<div class="heading jumbotron text-light img-fluid mb-0 pb-0">
    <div class="container ml-5 mr-5">
      <p class="first ml-0 mr-0">
          Don't let that seat go empty<br>
@@ -20,5 +21,17 @@
     </p>
    </div>
 </div>
+<div class="container search mt-0">
+    Search.Book.Travel
+</div>
+<div class="container">
+    <div class="row ride">
+      <div class="col">
+        <a href="" class="button">Find a ride</a>
+      </div>
+      <div class="col">
+        <a href="" class="button">Offer a ride</a>
+      </div>
+    </div>
 
 {%endblock%}
