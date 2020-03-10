@@ -1,8 +1,10 @@
 #main_nav{
-    background-color: #32843d;
+    background-color: #43853d;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
 body{
-    background-color: white;
+    background-color: #43853d;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
 .navbar-brand{
     
