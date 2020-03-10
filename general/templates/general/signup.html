@@ -2,6 +2,8 @@
 {%load static%}
 {%block head%}
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/singup.css' %}">
 {%endblock%}
 {%block title%}ePool | Signup{%endblock%}
@@ -10,7 +12,15 @@
 
 <h1  id="mainh1">SIGNUP</h1>
 <div class="container" style="margin-top:0;">
-    <div class="jumbotron ml-auto mt-auto mb-auto">
+    <div class="jumbotron ml-auto mt-auto mb-5">
+        <div class="row">
+            <div class="col-5 mt-4">
+                <img src="{%static 'images/sg.png'%}" class="" style="border-radius: 10px;">
+                <p id="par">Come and be a part of this eco-friendly family.</p>
+            </div>
+            <div class="col-7">
+
+            
         <form method="POST" action="" style="width: 50%;" class="ml-auto mr-auto">
             {%csrf_token%}
             <div class="form-group">
@@ -71,6 +81,8 @@
             <h5 class="mt-5">Already have an account? <a href="{%url 'login_page'%}">Login</a></h5>
 
         </form>
+    </div>
+</div>
     </div>
 </div>
 {%endblock%}

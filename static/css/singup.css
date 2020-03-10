@@ -9,4 +9,13 @@
     font-size: 4rem;
     text-decoration: underline;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 10px;
+}
+#par{
+    font-family: 'Indie Flower', cursive;
+    font-size: 4rem;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
 }
