@@ -1,10 +1,16 @@
 {% extends 'general/layout.html'%}
+{%load static%}
+{%block head%}
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{%endblock%}
 {%block title%}ePool | Login{%endblock%}
 
 {%block content%}
-<div class="container" style="margin-top: 8%;">
-    <div class="jumbotron ml-auto mt-auto mb-auto" style="background-color: #dbca34;">
+<h1  id="mainh1">LOGIN</h1>
+<div class="container" style="margin-top: 5%;">
+    <div class="jumbotron ml-auto mt-auto mb-auto">
         <form method="POST" action="" style="width: 50%;" class="ml-auto mr-auto">
             {%csrf_token%}
             <div class="form-group">
