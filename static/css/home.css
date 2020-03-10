@@ -47,3 +47,17 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+.cnt{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+}
+.txt{
+    font-size: 30px;
+    margin-top: 70px;
+    
+}
+
+.head2{
+    font-family: 'Mitr', sans-serif;
+}
