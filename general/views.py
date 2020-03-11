@@ -10,6 +10,8 @@ def home(request):
     return render(request,'general/home.html')
 
 def loginUser(request):
+    if request.user.is_authenticated:
+        return redirect('home_page')
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -22,6 +24,8 @@ def loginUser(request):
             return render(request,'general/login.html')
     return render(request,'general/login.html')
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect('home_page')
     if request.method == "POST":
         name = request.POST['username']
         email = request.POST['email']
@@ -59,3 +63,6 @@ def offer(request):
 def ride(request):
     return render(request,'general/ride.html')
 
+def logoutUser(request):
+    logout(request)
+    return render(request,'general/home.html')
