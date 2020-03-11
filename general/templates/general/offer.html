@@ -1,6 +1,27 @@
 {%extends 'general/layout.html'%}
+{%load static%}
 {%block title%}ePool | Offer{%endblock%}
-{%block head%}  {%endblock%}
-
+{%block head%} 
+    <link rel="stylesheet" href="{% static 'css/offer.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+ {%endblock%}
+ 
 {%block content%}
+<div class="container">
+    <h1 id="heading">OFFER A RIDE</h1>
+    <div class="jumbotron pt-5">
+        <div class="row pt-0">
+            <div class="col-6">
+                <img src="{%static 'images/offer.gif'%}" class="rounded">
+            </div>
+            <div class="col-6 border border-secondary rounded pt-5 pb-5 mt-0">
+        <form action="{%url 'offer_page'%}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-info" type="submit" value="Submit">Submit</button>
+        </form>
+        </div>
+        </div>
+    </div>
+</div>
 {%endblock%}
