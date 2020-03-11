@@ -66,3 +66,6 @@ def ride(request):
 def logoutUser(request):
     logout(request)
     return render(request,'general/home.html')
+
+def profile(request):
+    return render(request,'general/profile.html')
