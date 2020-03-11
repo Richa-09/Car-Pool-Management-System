@@ -2,8 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from . import models
 from django.contrib.auth import authenticate, login, logout
+from .models import UserProfile
 
 
 def home(request):
@@ -47,6 +47,13 @@ def signup(request):
             us.email = email
             us.set_password(pwd1)
             us.save()
+
+            p=UserProfile()
+            user = User.objects.get(username=name)
+            p.user = user
+            p.occupation = request.POST['occupation'] 
+            p.phone = request.POST['phone']
+            p.save()
 
             messages.success(request,"Signed up successfully")
             return redirect('login_page')
