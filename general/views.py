@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import UserProfile
-
+from .models import UserProfile, offermodel
+from .forms import OfferForm
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request,'general/home.html')
@@ -23,6 +24,8 @@ def loginUser(request):
             messages.info(request,"Username/Password invalid")
             return render(request,'general/login.html')
     return render(request,'general/login.html')
+
+
 def signup(request):
     if request.user.is_authenticated:
         return redirect('home_page')
@@ -63,10 +66,31 @@ def signup(request):
     return render(request,'general/signup.html')
             
                
-
+@login_required(login_url='login_page')
 def offer(request):
-    return render(request,'general/offer.html')
+    if request.method == 'POST':
+        form = OfferForm(request.POST)
 
+        if form.is_valid():
+            of = offermodel()
+            of.destination1 = form.cleaned_data['destination1']
+            of.destination2 = form.cleaned_data['destination2']
+            of.carModel = form.cleaned_data['carModel']
+            of.seatsAvailable = form.cleaned_data['seatsAvailable']
+            of.cost = form.cleaned_data['cost']
+            of.date = form.cleaned_data['date']
+            of.time = form.cleaned_data['time']
+            of.name = request.user
+            of.save()
+            messages.success(request," Successfully done, let's wait for requests!")
+            return render(request,'general/home.html',{
+                'form':form
+            })
+    else:
+        form =OfferForm()
+    return render(request,'general/offer.html',{
+        'form':form
+    })
 def ride(request):
     return render(request,'general/ride.html')
 

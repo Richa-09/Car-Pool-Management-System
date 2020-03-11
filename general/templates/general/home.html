@@ -21,7 +21,11 @@
     </p>
    </div>
 </div>
-
+{% for m in messages %}
+<div class=" text-center mt-4 alert {% if m.tags == 'success' %}alert-success{% endif %}{% if m.tags == 'info' %}alert-danger{% endif %}" style="width: 40%; text-align: center; margin-left: auto; margin-right: auto;">
+  {{m}}
+</div>
+{% endfor %}
 <div class="container search mt-3">
     Search.Book.Travel
 </div>
