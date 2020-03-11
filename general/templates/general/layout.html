@@ -51,6 +51,7 @@
                   <a class="dropdown-item" href="{%url 'logout_page'%}">Logout</a>
                 </div>
               </li>
+              <a class="nav-link d-inline {%if request.path == '/profile/'%} active {%endif%}" href="{%url 'profile_page'%}">Hello, {{request.user}}</a>
               <a class="nav-link d-inline {%if request.path == '/login/'%} active {%endif%} text-warning" href="{%url 'logout_page'%}"><button class="btn btn-warning btn-lg">Logout</button></a>
               {%endif%}
               {%if not request.user.is_authenticated%}
