@@ -21,7 +21,7 @@
             <div class="col-7">
 
             
-        <form method="POST" action="" style="width: 50%;" class="ml-auto mr-auto">
+        <form method="POST" action="{%url 'signup_page'%}" style="width: 50%;" class="ml-auto mr-auto">
             {%csrf_token%}
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group mt-2">
                 <label for="exampleInputPassword1">Phone</label>
-                <input type="email" class="form-control" name="phone" id="exampleInputPassword1" placeholder="Enter your phone number">
+                <input type="text" class="form-control" name="phone" id="exampleInputPassword1" placeholder="Enter your phone number">
                 <small>* Only visible when your accept a request.</small>
             </div>
             <div class="form-group mt-2">
@@ -75,7 +75,12 @@
                 <input  class="col-3" type="text" class="form-control" id="exampleInputEmail1" name="yea3" aria-describedby="emailHelp" placeholder="yyyy">
 
             </div>
-           
+
+            {% for m in messages%}
+            <div class="alert alert-danger mt-4 text-center">
+              {{m}}
+            </div>
+            {% endfor %}
            
             <button type="submit" class="btn btn-primary mt-5">Submit</button>
             <h5 class="mt-5">Already have an account? <a href="{%url 'login_page'%}">Login</a></h5>
