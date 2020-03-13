@@ -10,4 +10,6 @@ urlpatterns = [
     path('ride/', views.ride, name="ride_page"),
     path('logout/', views.logoutUser, name="logout_page"),
     path('profile/', views.profile, name="profile_page"),
+    path('rideinfo<int:k>/', views.rideinfo, name="rideinfo_page"),
+    path('sendReq/<slug:pr>', views.sendReq, name="sendreq_page"),
 ]

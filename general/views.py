@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import UserProfile, offermodel
+from .models import UserProfile, offermodel, rideReq
 from .forms import OfferForm
 from django.contrib.auth.decorators import login_required
 
@@ -92,7 +92,11 @@ def offer(request):
         'form':form
     })
 def ride(request):
-    return render(request,'general/ride.html')
+    of=offermodel()
+    off = offermodel.objects.all().order_by('-id')
+    return render(request,'general/ride.html',{
+        'off':off
+    })
 
 def logoutUser(request):
     logout(request)
@@ -100,3 +104,21 @@ def logoutUser(request):
 
 def profile(request):
     return render(request,'general/profile.html')
+
+def rideinfo(request,k):
+    off = offermodel.objects.all().filter(id=k)
+    return render(request,'general/rideinfo.html',{
+        'off':off
+    })
+
+def sendReq(request, pr):
+    if request.method == "POST":
+        rq= rideReq()
+        rq.info = request.POST['info']
+        rq.provider = pr
+        rq.customer = request.user
+        rq.save()
+        messages.success(request,"Your request has been sent!")
+        return render(request,'general/home.html')
+    return HttpResponse('Get lost')
+

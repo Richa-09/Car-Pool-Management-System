@@ -17,3 +17,8 @@ class offermodel(models.Model):
     seatsAvailable = models.IntegerField()
     cost = models.IntegerField(default=0)
     name = models.TextField(max_length=30, default='no name')
+
+class rideReq(models.Model):
+    provider = models.CharField(max_length=50)
+    customer = models.CharField(max_length=50)
+    info = models.TextField()
