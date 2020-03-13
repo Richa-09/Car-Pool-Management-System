@@ -37,7 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'general'
+    'django.contrib.sites',
+
+     #local
+    'general',
+
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +135,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True

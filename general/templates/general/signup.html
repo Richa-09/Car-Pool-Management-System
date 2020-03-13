@@ -1,5 +1,7 @@
 {% extends 'general/layout.html'%}
 {%load static%}
+{% load socialaccount %}
+{% providers_media_js %}
 {%block head%}
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
@@ -83,9 +85,13 @@
             {% endfor %}
            
             <button type="submit" class="btn btn-primary mt-5">Submit</button>
-            <h5 class="mt-5">Already have an account? <a href="{%url 'login_page'%}">Login</a></h5>
 
         </form>
+        <p>Social login</p><br>
+            {{user}}
+            <button><a href="">Google Login</a></button>
+            <button><a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook Login</a></button>
+            <h5 class="mt-5">Already have an account? <a href="{%url 'login_page'%}">Login</a></h5>
     </div>
 </div>
     </div>

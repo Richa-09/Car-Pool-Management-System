@@ -22,4 +22,5 @@ from general import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(urls)),
+    path('accounts/',include('allauth.urls')),
 ]
